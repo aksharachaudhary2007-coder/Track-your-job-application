@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Job</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+    <h1>Add New Job Application</h1>
+
+    <form action="/jobs" method="POST">
+
+        <label for="company">Company Name:</label>
+        <input type="text" id="company" name="company" required>
+        <br><br>
+
+        <label for="position">Job Position:</label>
+        <input type="text" id="position" name="position" required>
+        <br><br>
+
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location" required>
+        <br><br>
+
+        <label for="status">Application Status:</label>
+        <select id="status" name="status" required>
+            <option value="Applied">Applied</option>
+            <option value="Interview">Interview</option>
+            <option value="Selected">Selected</option>
+            <option value="Rejected">Rejected</option>
+        </select>
+        <br><br>
+
+        <label for="Date_Applied">Date Applied:</label>
+        <input type="date" id="Date_Applied" name="Date_Applied" required>
+        <br><br>
+
+        <button type="submit">Add Application</button>
+
+    </form>
+
+    <br>
+    <a href="/jobs">Back to Applications</a>
+
+</body>
+</html>
+

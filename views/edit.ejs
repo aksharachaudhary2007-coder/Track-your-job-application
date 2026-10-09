@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Job Application</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+    <h1>Edit Job Application</h1>
+
+   <form action="/jobs/<%= job.id %>?_method=PATCH" method="POST">
+
+        <label>Company Name:</label>
+        <input type="text" name="company" value="<%= job.company %>" required>
+        <br><br>
+
+        <label>Job Position:</label>
+        <input type="text" name="position" value="<%= job.position %>" required>
+        <br><br>
+
+        <label>Location:</label>
+        <input type="text" name="location" value="<%= job.location %>" required>
+        <br><br>
+
+        <label>Status:</label>
+        <select name="status" required>
+            <option value="Applied" <%= job.status === "Applied" ? "selected" : "" %>>Applied</option>
+            <option value="Interview" <%= job.status === "Interview" ? "selected" : "" %>>Interview</option>
+            <option value="Selected" <%= job.status === "Selected" ? "selected" : "" %>>Selected</option>
+            <option value="Rejected" <%= job.status === "Rejected" ? "selected" : "" %>>Rejected</option>
+        </select>
+        <br><br>
+
+        <label>Date Applied:</label>
+        <input type="text" name="Date_Applied" value="<%= job.Date_Applied %>" required>
+        <br><br>
+
+        <button type="submit">Update Application</button>
+
+    </form>
+
+    <br>
+    <a href="/jobs">Back to Applications</a>
+
+</body>
+</html>
+

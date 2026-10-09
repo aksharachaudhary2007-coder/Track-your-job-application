@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOB APPLICATION TRACKER</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>Track Your Job Applications</h1>
+    <p>Manage your internship and job applications in one place.</p>
+   
+     <%for(let job of jobs){ %>
+     <div>
+     <h5>id:<%=job.id %></h5>
+     <h5>company:<%=job.company%></h5>
+     <h5>position:<%=job.position%></h5>
+     <h5>location:<%=job.location%></h5>
+     <h5>status:<%=job.status%></h5>
+     <h5>Date_Applied:<%=job.Date_Applied%></h5>
+     <a href="http://localhost:3000/jobs/<%=job.id%>">view details</a>
+     <a href="http://localhost:3000/jobs/<%=job.id%>/edit">Edit application</a>
+     <form action="/jobs/<%= job.id %>?_method=DELETE" method="POST">
+    <button type="submit">Delete Application</button>
+     </form>
+     <hr>
+    </div>
+    <%}%>
+   <a href="http://localhost:3000/jobs/new">Add new jobs</a>
+</body>
+</html>
